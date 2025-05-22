@@ -14,10 +14,10 @@ jobs:
     steps:
         - name: Checkout
           uses: actions/checkout@v4
-        - name: install psql
-          run: |
-            sudo apt-get update
-            sudo apt-get install -y postgresql-client
+        # - name: install psql
+        #   run: |
+        #     sudo apt-get update
+        #     sudo apt-get install -y postgresql-client
         - name: run psql
           run: |
             psql --version
