@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: 
         - codebuild-GA-CodeBuild-Test-${{ github.run_id }}-${{ github.run_attempt }}
-        - image:custom-ubuntu-aws/codebuild/standard:7.0
+        - image:custom-linux-aws/codebuild/amazonlinux-x86_64-standard:5.0
     steps:
         - name: Checkout
           uses: actions/checkout@v4

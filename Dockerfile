@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
-RUN apt-get update && apt-get install -y --no-install-recommends postgresql-client \
-    curl \
-    ca-certificates
+FROM public.ecr.aws/codebuild/amazonlinux2-x86_64-standard:5.0
+
+RUN yum update -y && \
+    yum install -y postgresql15
