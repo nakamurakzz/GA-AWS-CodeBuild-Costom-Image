@@ -1,0 +1,24 @@
+# This workflow is run when user pushes to the repository
+
+name: Actions-2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: 
+        - codebuild-GA-CodeBuild-Test-2-${{ github.run_id }}-${{ github.run_attempt }}
+        # - image:custom-linux-aws/codebuild/amazonlinux-x86_64-standard:5.0
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: install psql
+          run: |
+            sudo yum update
+            sudo yum install -y postgresql15
+        - name: run psql
+          run: |
+            psql --version
