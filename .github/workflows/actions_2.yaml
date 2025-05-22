@@ -17,7 +17,7 @@ jobs:
           uses: actions/checkout@v4
         - name: install psql
           run: |
-            sudo yum update
+            sudo yum update -y
             sudo yum install -y postgresql15
         - name: run psql
           run: |
